@@ -42,8 +42,10 @@ class BarcodeScanPlugin(val activity: Activity): MethodCallHandler,
         val barcode = data?.getStringExtra("SCAN_RESULT")
         barcode?.let { this.result?.success(barcode) }
       } else {
-        val errorCode = data?.getStringExtra("ERROR_CODE")
-        this.result?.error(errorCode, null, null)
+//        val errorCode = data?.getStringExtra("ERROR_CODE")
+//        this.result?.error(errorCode, null, null)
+
+        this.result?.success(null)
       }
       return true
     }
